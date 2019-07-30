@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:5.6.40-zts-stretch
+    steps:
+      - checkout
+      - run: sudo composer self-update
+      - run: composer install
+      - run: ./vendor/bin/phpunit --bootstrap vendor/autoload.php --log-junit test-reports/junit.xml tests
+      - store_test_results:
+          path: test-reports
+      - store_artifacts:
+          path: test-reports  

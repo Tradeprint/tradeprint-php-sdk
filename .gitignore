@@ -1,0 +1,6 @@
+composer.phar
+vendor
+tools/*
+!tools/README.md
+test-reports
+experiments
