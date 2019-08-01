@@ -1,6 +1,6 @@
 # Tradeprint PHP SDK
 
-[![CircleCI](https://circleci.com/bb/tradeprintweb/tradeprint-php-sdk.svg?style=svg&circle-token=0eb6544fc4f5f3faa81a823951a454fdeda6f87e)](https://circleci.com/bb/tradeprintweb/tradeprint-php-sdk)
+[![CircleCI](https://circleci.com/gh/Tradeprint/tradeprint-php-sdk.svg?style=svg)](https://circleci.com/gh/Tradeprint/tradeprint-php-sdk)
 
 ## Introduction
 
