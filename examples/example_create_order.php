@@ -37,6 +37,7 @@ try {
                             'contactPhone' => '07655 568 134',
                             'companyName' => 'Tradeprint Distribution Ltd.',
                         ],
+
                     'deliveryAddress' =>
                         [
                             'companyName' => 'Doe Distribution',
