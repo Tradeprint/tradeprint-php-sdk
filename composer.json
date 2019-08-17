@@ -16,7 +16,7 @@
   "minimum-stability": "dev",
   "homepage": "https://www.tradeprint.co.uk/tradeprint-api",
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "autoload": {
     "psr-4": {
       "Tradeprint\\": "lib/"
