@@ -9,6 +9,7 @@ if(!class_exists('Tradeprint\TradeprintSDK'))
 
         private $environment, $username, $password, $version;
         private $_authToken;
+        private $base_url;
 
         function __construct($username, $password, $environment = 'production', $version = 'v2')
         {
@@ -20,6 +21,12 @@ if(!class_exists('Tradeprint\TradeprintSDK'))
             $this->environment = $environment;
             $this->username = $username;
             $this->version = $version;
+
+            if($environment === 'sandbox')
+                $this->base_url = "https://{$this->environment}.orders.tradeprint.io/{$version}/";
+            else
+                $this->base_url = "https://orders.tradeprint.io/{$version}/";
+
             $this->password = $password;
             $this->_authToken = $this->getToken();
         }
@@ -164,7 +171,7 @@ if(!class_exists('Tradeprint\TradeprintSDK'))
                 $headers[] = "Authorization: Bearer {$this->_authToken}";
             }
 
-            $path = "https://{$this->environment}.orders.tradeprint.io/{$this->version}/{$path}";
+            $path = $this->base_url.$path;
 
             $ch = curl_init($path);
             curl_setopt_array($ch, array(
@@ -208,7 +215,7 @@ if(!class_exists('Tradeprint\TradeprintSDK'))
                 $headers[] = "Authorization: Bearer {$this->_authToken}";
             }
 
-            $path = "https://{$this->environment}.orders.tradeprint.io/{$this->version}/{$path}";
+            $path = $this->base_url.$path;
 
             $ch = curl_init($path);
             curl_setopt_array($ch, array(
@@ -250,7 +257,7 @@ if(!class_exists('Tradeprint\TradeprintSDK'))
                 $headers[] = "Authorization: Bearer {$this->_authToken}";
             }
 
-            $path = "https://{$this->environment}.orders.tradeprint.io/{$this->version}/{$path}";
+            $path = $this->base_url.$path;
 
             $ch = curl_init($path);
             curl_setopt_array($ch, array(
@@ -294,7 +301,7 @@ if(!class_exists('Tradeprint\TradeprintSDK'))
                 $headers[] = "Authorization: Bearer {$this->_authToken}";
             }
 
-            $path = "https://{$this->environment}.orders.tradeprint.io/{$this->version}/{$path}";
+            $path = $this->base_url.$path;
 
             $ch = curl_init($path);
             curl_setopt_array($ch, array(
