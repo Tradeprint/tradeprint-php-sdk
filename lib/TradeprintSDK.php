@@ -22,7 +22,7 @@ if(!class_exists('Tradeprint\TradeprintSDK'))
             $this->username = $username;
             $this->version = $version;
 
-            if($environment === 'sandbox')
+            if($environment === 'stage')
                 $this->base_url = "https://{$this->environment}.orders.tradeprint.io/{$version}/";
             else
                 $this->base_url = "https://orders.tradeprint.io/{$version}/";
