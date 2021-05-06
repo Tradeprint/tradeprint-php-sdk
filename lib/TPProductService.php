@@ -38,9 +38,9 @@ if (!class_exists('Tradeprint\TPProductService')) {
         public function requestProductAttributes($productName = null)
         {
             if (empty($productName)) {
-                return $this->_api->get('products/attributes');
+                return $this->_api->get('products-v2/attributes-v2');
             } else {
-                return $this->_api->get("products/attributes/${productName}");
+                return $this->_api->get("products-v2/attributes-v2/${productName}");
             }
         }
 
@@ -62,7 +62,7 @@ if (!class_exists('Tradeprint\TPProductService')) {
             if (!empty($fromDate)) {
                 $payload['fromDate'] = $fromDate;
             }
-            return $this->_api->post("products/{$productName}", $payload);
+            return $this->_api->post("products-v2/{$productName}", $payload);
         }
 
         /**
@@ -90,7 +90,7 @@ if (!class_exists('Tradeprint\TPProductService')) {
                 $payload['productNames'] = $productNames;
             }
 
-            return $this->_api->post('products', $payload);
+            return $this->_api->post('products-v2', $payload);
         }
 
         /**
@@ -102,7 +102,7 @@ if (!class_exists('Tradeprint\TPProductService')) {
          */
         public function getAvailableQuantities($productId, $serviceLevel, $productionData)
         {
-            return $this->_api->post('products/quantities', ['productId' => $productId, 'serviceLevel' => $serviceLevel, 'productionData' => $productionData]);
+            return $this->_api->post('products-v2/quantities-v2', ['productId' => $productId, 'serviceLevel' => $serviceLevel, 'productionData' => $productionData]);
         }
 
     }
